@@ -20,21 +20,21 @@ index.html
     header {
       width: 100%;
       background-color: rgba(0, 0, 0, 0.3);
-      padding: 30px 20px;
+      padding: 20px 40px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 40px;
+      box-sizing: border-box;
     }
     header h1 {
       margin: 0;
-      font-size: 3rem;
+      font-size: 2.8rem;
       letter-spacing: 2px;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
     }
-    nav {
-      margin-top: 20px;
-    }
-    nav a {
+    nav.main-nav a {
       text-decoration: none;
       color: #fff;
       background: #ff6f61;
@@ -45,10 +45,26 @@ index.html
       box-shadow: 0 4px 8px rgba(255,111,97,0.6);
       transition: background 0.3s ease, transform 0.2s ease;
     }
-    nav a:hover {
+    nav.main-nav a:hover {
       background: #ff4c3b;
       transform: translateY(-3px);
       box-shadow: 0 8px 16px rgba(255,76,59,0.8);
+    }
+    nav.auth-buttons a {
+      text-decoration: none;
+      color: #2575fc;
+      background: #fff;
+      padding: 8px 18px;
+      margin-left: 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background 0.25s ease, transform 0.15s ease;
+      font-size: 0.9rem;
+    }
+    nav.auth-buttons a:hover {
+      background: #d6e4ff;
+      transform: translateY(-2px);
     }
     main {
       max-width: 700px;
@@ -61,34 +77,89 @@ index.html
       line-height: 1.6;
       backdrop-filter: blur(10px);
       color: #fff;
+      box-sizing: border-box;
+    }
+    section.classroom {
+      margin-top: 50px;
+      max-width: 700px;
+      background: rgba(255,255,255,0.25);
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      color: #222;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+    section.classroom h2 {
+      margin-top: 0;
+      color: #2575fc;
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      letter-spacing: 1.5px;
+    }
+    section.classroom p {
+      margin: 0;
+      line-height: 1.5;
     }
     @media (max-width: 480px) {
-      header h1 {
-        font-size: 2.2rem;
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
       }
-      nav a {
+      header h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+      nav.main-nav a {
+        margin: 6px 6px 0 0;
         padding: 10px 18px;
-        margin: 6px 6px;
-        font-size: 0.9rem;
+        font-size: 1rem;
+      }
+      nav.auth-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+      }
+      nav.auth-buttons a {
+        margin-left: 0;
+        margin-right: 12px;
       }
       main {
         font-size: 1rem;
         padding: 20px 15px;
+      }
+      section.classroom {
+        padding: 20px 15px;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to SmartStudy!</h1>
-    <nav>
+    <h1>SmartStudy</h1>
+    <nav class="main-nav">
       <a href="subjects.html">Subjects</a>
-      <!-- More links coming soon -->
+    </nav>
+    <nav class="auth-buttons">
+      <a href="#">Sign Up</a>
+      <a href="#">Sign In</a>
     </nav>
   </header>
 
   <main>
     <p>Your personal study helper — learn your school subjects here with easy lessons and practice.</p>
   </main>
+
+  <section class="classroom">
+    <h2>SmartStudy for the Classroom</h2>
+    <p>
+      Designed for teachers and students to collaborate and learn together.  
+      Track progress, assign lessons, and create quizzes easily. Coming soon!
+    </p>
+  </section>
 </body>
 </html>
